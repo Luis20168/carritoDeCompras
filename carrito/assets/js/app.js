@@ -19,7 +19,7 @@ carrito.addEventListener('mouseover',()=>{
 })
 
 
-//funcionalidad
+//funcionalidads
 
 const agregado= document.getElementById('agregado');
 agregar.addEventListener('click', ()=>{
