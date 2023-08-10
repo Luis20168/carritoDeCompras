@@ -67,9 +67,9 @@
     text-align: center;
     padding: 30px;
     background: #741d51; /* Old browsers */
-    background: -moz-linear-gradient(left, #741d51 0%, #e44e52 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #741d51 0%,#e44e52 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #741d51 0%,#e44e52 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(left, #1fca33 0%, #fd0f17 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #1fca33 0%,#fd0f17 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #1fca33 0%,#fd0f17 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#741d51', endColorstr='#e44e52',GradientType=1 ); /* IE6-9 */
 
     color: white;
@@ -162,12 +162,20 @@
 }
 
 .despliegue{
-    position: fixed;
+    position: fixed; 
     top: 7.5vh;
-    right: 40vh;
+    right: 10px;
     width: 51vh;
-    height: 60%;
+    height: auto;
     background-color: white;
+    text-align: center;
+    z-index: 300;
+    overflow: hidden;
+    transition: all 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    cursor: pointer;
+    scroll-behavior: auto;
+    
+    
 
 }
 
@@ -189,19 +197,79 @@
 }
 
 .eliminar{
-    position: absolute;    /* para que coja como referencia su padre */
-    bottom: 10px;
-    width: 80%;
+        /* para que coja como referencia su padre */
+    bottom: 5px;
+    right: 50%;
+    text-align: center;
+    
+    
+   
+    
+    
+    
     
 }
 
 .agregado{
     margin: 15px;
-    background-color: red;
     display: grid;
     
+
+
+}
+
+
+
+.btn{
+    position: relative;
+    width: 80%;
+    bottom: 5px;
+    height: 30px;
+    border: none;
+    background-color: blueviolet; 
+    border-radius: 10px;
+    margin: 20px;
     
 }
+.btn-cerrar{
+    position: relative;
+    width: 50%;
+    bottom: 5px;
+    height: 30px;
+    border: none;
+    background-color: #ffc800; 
+    border-radius: 10px;
+    margin: 20px;
+    bottom: 0;
+    
+}
+
+.card{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    margin: 20px;
+}
+
+.imagen_{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
+
+
+
+/* funciones de js */
+
+.desaparecer{
+    display: none;
+}
+
+
+
 
 
 

@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Carrito de compras</title>
 </head>
-<body>
+<body id="body">
 
     <header>
         <div class="menu">
             <h1>Compras Rpm</h1>
 
-            <div class="carrito">
+            <div class="carrito" id="carrito">
                 <img src="assets/img/cart.png" width="40px">
                 
             </div>
@@ -25,7 +25,7 @@
 
         <div class="portada">
             <h3 class="title">Aprende algo nuevo</h3>
-            <p>Todos los cursos o productos a $15</p>
+            <p>Productos a $15</p>
 
             <input type="search"  id="buscador" placeholder="¿Que te gustaria buscar?"> x
 
@@ -54,91 +54,91 @@
             <div class="tarjetas">
                 <img src="assets/img/curso1.jpg" class="img" >
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>pepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
             <div class="tarjetas">
-                <img src="assets/img/curso2.jpg" class="img">
+                <img src="assets/img/curso2.jpg" class="img" >
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>Ppepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
             <div class="tarjetas">
                 <img src="assets/img/curso3.jpg" class="img">
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>Ppepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
             <div class="tarjetas">
                 <img src="assets/img/curso4.jpg" class="img">
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>Ppepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
             <div class="tarjetas">
                 <img src="assets/img/curso5.jpg" class="img">
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>Ppepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
             <div class="tarjetas">
                 <img src="assets/img/curso1.jpg" class="img">
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>Ppepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
             <div class="tarjetas">
                 <img src="assets/img/curso4.jpg" class="img">
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>Ppepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
             <div class="tarjetas">
                 <img src="assets/img/curso3.jpg" class="img">
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>Ppepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
-            <div class="tarjetas">
+            <div class="tarjetas" id="p">
                 <img src="assets/img/curso2.jpg" class="img">
                 <h4>HTML 5 Y .... Para principiantes</h4>
-                <p>Juan Angulo</p>
+                <p>pepito</p>
                 <img src="assets/img/estrellas.png" width="100px" alt="">
                 <p>200_________________15k</p>
                 <br>
-                <button class="agregar">Agregar al carrito</button>
+                <button class="agregar" id="agregar">Agregar al carrito</button>
             </div>
 
            
@@ -149,8 +149,9 @@
     </div>
 
 
-    <div class="despliegue">
-        <div class="cont">
+    <!-- modal -->
+    <div class="despliegue desaparecer" id="despliegue"  >
+        <div class="cont" id="cont">
             <div class="categoria">
                 <a href="">Imagen</a>
                 <a href="">Nombre</a>
@@ -158,14 +159,23 @@
                 <a href="">Cantidad</a>
             </div>
     
-            <div class="agregado">
-                <h1>hola</h1>
-                <h1>hi</h1>
+            <div class="agregado" id="agregado">
+                
                 
     
             </div>
-            <button class="eliminar">Baciar Carrito</button>
+            
         </div>
+        
+
+        <button class="btn" id="eliminar">Eliminar Todo</button>
+        <br>
+        <button class="btn-cerrar" id="cerrar">cerrar</button>
+
+
+
+        
+        
     </div>
 
     <hr>
@@ -180,6 +190,6 @@
         <a>Empleo</a>
         
     </footer>
-    
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
