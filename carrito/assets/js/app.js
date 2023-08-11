@@ -4,7 +4,6 @@ const despliegue= document.getElementById('despliegue');
 const carrito= document.getElementById('carrito');
 const cerrar= document.getElementById('cerrar');
 const agregar=document.getElementById('agregar');
-console.log(agregar)
 
 
 
@@ -61,13 +60,13 @@ let allProducts=[];
 
 
 contenidoProductos.addEventListener('click', (e)=>{
-    console.log(e.target.classList.contains('agregar'))
+    // console.log(e.target.classList.contains('agregar'))
 
     if(e.target.classList.contains('agregar')){
-        console.log(e.target.parentElement); //con el parent element lo que se hace es llegar al div pafre de el parametro e botton
+        // console.log(e.target.parentElement); //con el parent element lo que se hace es llegar al div pafre de el parametro e botton
         const producto= e.target.parentElement;
-        console.log(producto.querySelector('h4').textContent ) //asi se saca la informacion de cada tarjeta
-        console.log(producto.querySelector('p').textContent)
+        // console.log(producto.querySelector('h4').textContent ) //asi se saca la informacion de cada tarjeta
+        // console.log(producto.querySelector('p').textContent)
 
         const infoProducto= {
             cantidad: 1,
@@ -76,9 +75,9 @@ contenidoProductos.addEventListener('click', (e)=>{
             precio: producto.querySelector('h5').textContent  
         }
 
-        console.log(infoProducto)
 
-        let allProducts=[...allProducts, infoProducto];
+        allProducts=[...allProducts, infoProducto];
+        console.log(allProducts)
 
     }
 
