@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+
+html {
+    scroll-behavior: smooth ;
+
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
+.menu{
+    
+    border-bottom: 3px solid green;
+    text-align: center;
+    padding: 20px;
+    height: auto; 
+    padding: auto;
+
+}
+
+
+
+
+.portada{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../img/hero.jpg");
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+
+    
+
+}
+
+.portada h3{
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+    color: white;
+    
+}
+
+.portada p{
+    color: white;
+    text-align: center;
+}
+
+.portada #buscador{
+    width: 40%;
+    outline: none;
+    height: 40px;
+    border-radius: 10px;
+    margin: 70px;
+
+}
+
+.informacion{
+    background: #741d51; /* Old browsers */
+    background: -moz-linear-gradient(left, #1fca33 0%, #fd0f17 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #1fca33 0%,#fd0f17 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #1fca33 0%,#fd0f17 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#741d51', endColorstr='#e44e52',GradientType=1 ); /* IE6-9 */
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    height: 10vh;
+    text-align: center;
+    align-items: center;
+    
+}
+/* 
+tarjetas */
+
+.contenido{
+    padding-top: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    gap: 105;
+    background-color:  #e1e1e1;
+}
+
+.tarjetas{
+    background-color: rgb(255, 255, 255);
+    margin: 30px;
+    border-radius: 15px;
+    padding: 20px;
+
+    
+
+
+}
+
+button{
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: blueviolet;
+    border: none;
+    margin: 10px;
+}
+
+button:hover{
+    
+    background-color: blueviolet;
+    font-weight: bolder;
+}
+
+.carrito_compras{
+    background-color: #e1e1e1;
+    padding: 30px;
+    text-align: center;
+    
+    
+    
+}
+
+.carrito_compras h1{
+    margin: 20px;
+}
+
+.carrito_compras .compra{
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    
+}
+
+.datos, .producto{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+    
+}
+.datos a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.fin{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding-bottom: 30px;
+    background-color: white;
+}
+
+
+.fin a{
+    margin: 5px;
+    color: #1EAEDB;
+    cursor: pointer;
+    text-align: center;
+}
+
+.fin a:hover{
+    color: #0FA0CE;
+    
+
+}
+
+@media(min-width:650px){
+
+
+
+    .contenido{
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        gap: 105;
+        background-color:  #e1e1e1;
+    }
+    
+
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+
+        
+    
+     
+
+    }
+
+    .carrito_compras{
+        /* display: none; */
+        position: absolute;
+        right: 1px;
+        top: 11vh;
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.5);
+        
+        
+        
+    }
+    .carrito_compras h1{
+        color: white;
+      
+        
+        
+        
+    }
+
+    .tarjetas{
+        border-bottom: solid 1px black;
+        
+        
+    
+    
+    }
+    
+}
+
+
+/* funciones js */
+
+.desaparecer{
+    display: none;
+}
+
+
+
+
+
+
+
