@@ -10,9 +10,6 @@ const agregado= document.getElementById("agregado");
 
 btnCarrito.addEventListener('mouseover', ()=>{
     carritoCompras.classList.remove("desaparecer");
-
-    
-
     cerrarCarro();
     
 });
@@ -42,11 +39,6 @@ contenidoProductos.addEventListener('click', (e)=>{
             img: producto.querySelector('img').src,
             nombre: producto.querySelector('h4').textContent,
             precio: producto.querySelector('h5').textContent
-
-            
-            
-
-
         }
 
 
@@ -66,6 +58,7 @@ contenidoProductos.addEventListener('click', (e)=>{
             })                
             
             allProductos=[...allProductos];
+            console.log(allProductos);
 
         }else{
             allProductos= [...allProductos, infoProducto]
@@ -83,6 +76,7 @@ contenidoProductos.addEventListener('click', (e)=>{
     
 })
 
+//elimiar------------------------------------------------
 
 agregado.addEventListener('click',(e)=>{
 
@@ -104,15 +98,54 @@ agregado.addEventListener('click',(e)=>{
 
 })
 
+
 const compra= document.querySelector('.compra');
 compra.addEventListener('click',(e)=>{
+    
     if(e.target.classList.contains('btn-eliminar-todo')){
-        console.log("se elimina")
+
+
+        for (i=0; allProductos.length;i++){
+            allProductos.pop(i);
+
+        }
+        console.log(allProductos);
+        
+        mostrar();
+        
+        
 
     }
 
+    //btn de mas y menosS
 
-})
+    const sumar= (p)=>{
+        const product= allProductos.find((a)=> a.nombre=== product.name);
+        console.log(product)
+        
+
+    }
+
+    console.log(sumar)
+    
+    
+
+
+
+
+
+
+
+//fin btn de mas y menos
+});
+
+
+
+//elimiar----------------fin--------------------------------
+
+
+
+
 
 
 
@@ -144,7 +177,7 @@ function mostrar(){
         <img src=${producto.img} width="100px" alt="">
         <h5 >${producto.nombre}</h5>
         <h6>${producto.precio}</h6>
-        <p> <i class="fa-solid fa-minus"></i>    ${producto.cantidad}   <i class="fa-solid fa-plus"></i>  <i class="fa-solid fa-trash eliminar"></i> </p>  `  ;
+        <p> <i class="fa-solid fa-minus menos"></i>  ${producto.cantidad}   <i class="fa-solid fa-plus mas"></i>  <i class="fa-solid fa-trash eliminar"></i> </p>  `  ;
 
 
        
