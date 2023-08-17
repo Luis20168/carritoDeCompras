@@ -10,11 +10,21 @@ const agregado= document.getElementById("agregado");
 
 btnCarrito.addEventListener('mouseover', ()=>{
     carritoCompras.classList.remove("desaparecer");
+
+    
+
+    cerrarCarro();
+    
+});
+
+function cerrarCarro(){
     btncerrar.addEventListener('click', ()=>{
         carritoCompras.classList.add("desaparecer");
 
     });
-});
+}
+
+
 
 const contenidoProductos= document.getElementById("contenido-productos");
 
@@ -25,6 +35,8 @@ const contadorProductos=document.getElementById("contadorProductos");
 contenidoProductos.addEventListener('click', (e)=>{
     if(e.target.classList.contains('agregar')){
         const producto= e.target.parentElement;      //lo que hace es llegar al padre del elemnto 
+        carritoCompras.classList.remove("desaparecer"); //aparecer el carrito
+        cerrarCarro();
         const infoProducto={
             cantidad: 1,
             img: producto.querySelector('img').src,
@@ -72,6 +84,37 @@ contenidoProductos.addEventListener('click', (e)=>{
 })
 
 
+agregado.addEventListener('click',(e)=>{
+
+    if(e.target.classList.contains('eliminar')){
+        const product= e.target.parentElement.parentElement;
+        const title= product.querySelector('h5').textContent;
+        
+        allProductos= allProductos.filter(
+            producto => producto.nombre !== title
+            
+        );
+
+        console.log(allProductos);
+        mostrar();
+        
+
+    }
+
+
+})
+
+const compra= document.querySelector('.compra');
+compra.addEventListener('click',(e)=>{
+    if(e.target.classList.contains('btn-eliminar-todo')){
+        console.log("se elimina")
+
+    }
+
+
+})
+
+
 
 
 
@@ -94,11 +137,14 @@ function mostrar(){
         let contenedorProducto= document.createElement('div');
         contenedorProducto.classList.add('producto');
 
+        
+        
+
         contenedorProducto.innerHTML=`
         <img src=${producto.img} width="100px" alt="">
-        <p>${producto.nombre}</p>
-        <p>${producto.precio}</p>
-        <p>${producto.cantidad}</p>`;
+        <h5 >${producto.nombre}</h5>
+        <h6>${producto.precio}</h6>
+        <p> <i class="fa-solid fa-minus"></i>    ${producto.cantidad}   <i class="fa-solid fa-plus"></i>  <i class="fa-solid fa-trash eliminar"></i> </p>  `  ;
 
 
        
@@ -112,7 +158,9 @@ function mostrar(){
         agregado.append(contenedorProducto);
 
     })
-    console.log(total_)
+    
+
+    
 
 
     pagar.textContent = total_
@@ -122,4 +170,8 @@ function mostrar(){
 
 
 }
+
+
+
+ 
 
