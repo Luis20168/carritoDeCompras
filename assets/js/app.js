@@ -23,9 +23,25 @@ function cerrarCarro(){
 
 
 
+
+
+
+
+
+
+
 const contenidoProductos= document.getElementById("contenido-productos");
 
 let allProductos=[];
+//local
+document.addEventListener('DOMContentLoaded', () => {
+    allProductos = JSON.parse(localStorage.getItem('productos')) || [];
+    
+    mostrar();
+  });
+//finLocal
+
+
 const pagar= document.getElementById("pagar")
 const contadorProductos=document.getElementById("contadorProductos");
 
@@ -57,13 +73,17 @@ contenidoProductos.addEventListener('click', (e)=>{
                 
             })                
             
-            allProductos=[...allProductos];
+            allProductos=[...productos];
             console.log(allProductos);
 
         }else{
             allProductos= [...allProductos, infoProducto]
+            console.log(allProductos);
 
         }
+
+        //mas
+
         
 
         
@@ -72,6 +92,8 @@ contenidoProductos.addEventListener('click', (e)=>{
         
 
     }
+
+    
  
     
 })
@@ -82,19 +104,79 @@ agregado.addEventListener('click',(e)=>{
 
     if(e.target.classList.contains('eliminar')){
         const product= e.target.parentElement.parentElement;
-        const title= product.querySelector('h5').textContent;
+        const title= product.querySelector('h4').textContent;
+
+
         
         allProductos= allProductos.filter(
             producto => producto.nombre !== title
             
         );
-
-        console.log(allProductos);
-        mostrar();
+        
+        
+        
+        
+        
         
 
     }
+    
 
+
+    //sumar
+    if(e.target.classList.contains('mas')){
+        const product= e.target.parentElement.parentElement;
+        const title= product.querySelector('h4').textContent;
+        
+         allProductos.filter(p=>{
+            if(p.nombre==title){
+                console.log('se suamara'+ title)
+                p.cantidad++
+                console.log(`${p.nombre} tiene una cantidad de ${p.cantidad}`)
+                
+            }
+
+            
+
+            
+
+            
+        })
+
+
+    }
+
+    //restar
+    if(e.target.classList.contains('menos')){
+        const product= e.target.parentElement.parentElement;
+        const title= product.querySelector('h4').textContent;
+        
+         allProductos.filter(p=>{
+            if(p.nombre==title){
+                if(p.cantidad==1){       //para que no reste mas
+                    console.log('no se puede restar mas')
+
+                }
+                else{
+                    p.cantidad--
+
+                }
+                
+                
+                
+            }
+
+            
+
+            
+
+            
+        })
+
+
+    }
+
+    mostrar();
 
 })
 
@@ -117,16 +199,8 @@ compra.addEventListener('click',(e)=>{
 
     }
 
-    //btn de mas y menosS
+    
 
-    const sumar= (p)=>{
-        const product= allProductos.find((a)=> a.nombre=== product.name);
-        console.log(product)
-        
-
-    }
-
-    console.log(sumar)
     
     
 
@@ -138,6 +212,10 @@ compra.addEventListener('click',(e)=>{
 
 //fin btn de mas y menos
 });
+
+
+
+
 
 
 
@@ -157,6 +235,8 @@ compra.addEventListener('click',(e)=>{
 //mostrar
 
 function mostrar(){
+    
+    
      //limpiar html
      
      let total_= 0;
@@ -165,6 +245,7 @@ function mostrar(){
 
      
 
+
     allProductos.forEach(producto=>{
        
         let contenedorProducto= document.createElement('div');
@@ -172,11 +253,12 @@ function mostrar(){
 
         
         
+        
 
         contenedorProducto.innerHTML=`
         <img src=${producto.img} width="100px" alt="">
-        <h5 >${producto.nombre}</h5>
-        <h6>${producto.precio}</h6>
+        <h4 >${producto.nombre}</h4>
+        <h5>${producto.precio}</h5>
         <p> <i class="fa-solid fa-minus menos"></i>  ${producto.cantidad}   <i class="fa-solid fa-plus mas"></i>  <i class="fa-solid fa-trash eliminar"></i> </p>  `  ;
 
 
@@ -198,11 +280,19 @@ function mostrar(){
 
     pagar.textContent = total_
     contadorProductos.innerText= `${totalUnico}`;
+   
 
+    saveLocal();
+    
+    
+}
 
-
+function saveLocal(){
+    localStorage.setItem('productos', JSON.stringify(allProductos));
 
 }
+
+
 
 
 

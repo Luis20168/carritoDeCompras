@@ -9,7 +9,11 @@ html {
     scroll-behavior: smooth ;
 
 }
-
+.number{
+    text-decoration: none;
+    color: red;
+    
+}
 .container{
     display: grid;
     grid-template-columns: repeat(1,1fr);
@@ -175,6 +179,7 @@ button:hover{
     
 
 }
+
 
 .total{
     border: black solid 1px;
